@@ -1,38 +1,36 @@
-# Movie Industry Correlation Analysis project
+# Movie Industry Correlation Analysis
 
-In questo progetto, l'obiettivo è esplorare un vasto dataset dell'industria cinematografica per analizzare e scoprire quali variabili (come budget, numero di voti, genere, ecc.) hanno la maggiore correlazione con il successo finanziario di un film, misurato tramite gli incassi lordi (gross earnings) al botteghino.
+This project explores a comprehensive dataset from the movie industry to identify the key variables (such as budget, user votes, genre, etc.) that have the strongest correlation with a film's financial success, measured by its gross earnings at the box office.
 
 ### Project Structure
 
-* `Movie correlation project.ipynb`: notebook contenente l'intero workflow di analisi dei dati, suddiviso in:
-    * **Pulizia e pre-elaborazione dei dati**: ispezione dei valori mancanti, controllo dei tipi di dato e conversione delle variabili categoriche (object) in formati numerici (`cat.codes`) per consentire il calcolo matematico.
-    * **Analisi esplorativa e visualizzazione (EDA)**: creazione di grafici a dispersione (scatter plot) e grafici di regressione per analizzare visivamente il rapporto tra budget e incassi utilizzando Matplotlib e Seaborn.
-    * **Analisi delle correlazioni**: calcolo delle matrici di correlazione utilizzando i metodi Pearson, Kendall e Spearman. Sviluppo di una Heatmap delle correlazioni numeriche e identificazione automatica delle coppie di variabili con la correlazione più alta.
-* `requirements.txt`: librerie python che devono essere installate (Pandas, NumPy, Seaborn, Matplotlib).
+* `Movie correlation project.ipynb`: The main analysis notebook, featuring:
+    * **Data Cleaning & Pre-processing**: Inspection of missing values, data type validation, and conversion of categorical variables into numerical codes (`cat.codes`) to enable mathematical correlation calculations.
+    * **Exploratory Data Analysis (EDA)**: Use of scatter plots and regression plots to visually assess the relationship between budget and gross earnings using Matplotlib and Seaborn.
+    * **Correlation Analysis**: Implementation of correlation matrices using Pearson, Kendall, and Spearman methods.
+    * **Visual Insights**: Development of a Correlation Heatmap to identify top-performing feature pairs.
+* `requirements.txt`: List of Python libraries required to run the analysis (Pandas, NumPy, Seaborn, Matplotlib).
 
+### Dataset Overview
 
-### Dataset
+**Input Variables (Movie Features):**
+* `name`: Title of the movie.
+* `rating`: Content rating (e.g., R, PG-13).
+* `genre`: Movie category.
+* `year`: Release year.
+* `released`: Release date and country.
+* `score`: Average user rating (e.g., IMDb score).
+* `votes`: Total number of user votes.
+* `director/writer/star`: Key creative personnel.
+* `country`: Country of production.
+* `budget`: Production cost.
+* `company`: Production studio.
+* `runtime`: Duration in minutes.
 
-**Input variables (Movie features):**
-* `name` (text/categorical): titolo del film
-* `rating` (categorical): classificazione del film (es. R, PG-13)
-* `genre` (categorical): genere cinematografico
-* `year` (numeric): anno di uscita
-* `released` (text/categorical): data e luogo di rilascio
-* `score` (numeric): valutazione media (es. punteggio IMDb)
-* `votes` (numeric): numero totale di voti degli utenti
-* `director` (text/categorical): regista
-* `writer` (text/categorical): sceneggiatore principale
-* `star` (text/categorical): attore protagonista
-* `country` (text/categorical): paese di produzione
-* `budget` (numeric): costo di produzione del film
-* `company` (text/categorical): casa di produzione
-* `runtime` (numeric): durata del film in minuti
+**Target Variable:**
+* `gross`: Total box office earnings.
 
-**Target variable (valore di interesse principale):**
-* `gross` (numeric) - incasso lordo totale del film al botteghino
-
-### Results
-L'analisi delle matrici di correlazione ha permesso di estrarre le seguenti conclusioni chiave:
-* Il **numero di voti (`votes`)** e il **budget (`budget`)** hanno in assoluto la correlazione più alta e significativa con gli incassi lordi (`gross`). 
-* Al contrario di quanto si potrebbe pensare, il punteggio della critica o degli utenti (`score`) ha un impatto molto basso sugli incassi reali del film.
+### Key Results
+The correlation analysis yielded the following insights:
+* **Budget and Votes**: These variables show the highest and most significant correlation with gross earnings.
+* **Critical Score**: Contrary to common assumptions, a movie's score has a relatively low impact on its actual financial performance.
